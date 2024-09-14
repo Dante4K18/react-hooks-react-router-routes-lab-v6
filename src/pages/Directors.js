@@ -1,15 +1,18 @@
-import { useEffect, useState } from "react";
-
-function Directors() {
+const Directors = ({ directors }) => {
   return (
-    <>
-      <header>
-        {/* What component should go here? */}
-      </header>
-      <main>
-        {/* Director info here! */}
-      </main>
-    </>
+    <div>
+      <h1>Directors Page</h1>
+      {directors.map((director) => (
+        <article key={director.name}>
+          <h2>{director.name}</h2>
+          <ul>
+            {director.movies.map((movie, idx) => (
+              <li key={idx}>{movie}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
   );
 };
 
